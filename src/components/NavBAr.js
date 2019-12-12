@@ -1,31 +1,36 @@
-import React from 'react'
+import React from "react";
+import { Button } from "reactstrap";
 
-const NavBar = (props) => {
+const NavBar = props => {
   // console.log(props)
   return (
     <nav>
-      <p>
-        NASA Photo Of The Day: {props.photoOfTheDay.title}
-      </p>
-      <div className='controlButtonBox'>
-        <div className='controlButton' onClick={() => props.clickHandler('Mplus')}>+</div>
-        <div className='controlButtonLabel'>
-          Month: {props.month}
-        </div>
-        <div className='controlButton' onClick={() => props.clickHandler('Mminus')}>-</div>
-        <div className='controlButton' onClick={() => props.clickHandler('Dplus')}>+</div>
-        <div className='controlButtonLabel'>
-          Day: {props.day}
-        </div>
-        <div className='controlButton' onClick={() => props.clickHandler('Dminus')}>-</div>
-        <div className='controlButton' onClick={() => props.clickHandler('Yplus')}>+</div>
-        <div className='controlButtonLabel'>
-          Year: {props.year}
-        </div>
-        <div className='controlButton' onClick={() => props.clickHandler('Yminus')}>-</div>
+      <h1>NASA Photo Of The Day: {props.photoOfTheDay.title}</h1>
+      <div className="controlButtonBox">
+        <Button color="primary" onClick={() => props.clickHandler("Mplus")}>
+          +
+        </Button>
+        <div className="controlButtonLabel">Month: {props.month}</div>
+        <Button color="primary" onClick={() => props.clickHandler("Mminus")}>
+          -
+        </Button>
+        <Button color="primary" onClick={() => props.clickHandler("Dplus")}>
+          +
+        </Button>
+        <div className="controlButtonLabel">Day: {props.day}</div>
+        <Button color="primary" onClick={() => props.clickHandler("Dminus")}>
+          -
+        </Button>
+        <Button color="primary" onClick={() => props.clickHandler("Yplus")}>
+          +
+        </Button>
+        <div className="controlButtonLabel">Year: {props.year}</div>
+        <Button color="primary" onClick={() => props.clickHandler("Yminus")}>
+          -
+        </Button>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

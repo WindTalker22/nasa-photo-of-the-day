@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Button, Fade } from "reactstrap";
 
-const ContentBox = (props) => {
+const ContentBox = props => {
   // console.log(props.explanation)
-  return (
-    <section className='contentBox'>
-      <h1>
-        Explanation
-      </h1>
-      <article className='explanation'>
-        {props.explanation}
-      </article>
-    </section>
-  )
-}
+  const [fadeIn, setFadeIn] = useState(!true);
 
-export default ContentBox
+  const toggle = () => setFadeIn(!fadeIn);
+
+  return (
+    <section className="contentBox">
+      <Button color="primary" onClick={toggle}>
+        Click Here For Explanation
+      </Button>
+      <Fade className="explanation" in={fadeIn} tag="h5" className="mt-3">
+        {props.explanation}
+      </Fade>
+    </section>
+  );
+};
+
+export default ContentBox;
